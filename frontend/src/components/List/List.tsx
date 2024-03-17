@@ -62,7 +62,7 @@ export function List() {
 
   return (
     <TodoContext.Provider value={{ updateTask }}>
-      <div className="flex flex-col p-4 border rounded-xl max-w-xl shadow-lg min-h-96 min-w-80">
+      <div className="flex flex-col p-4 border rounded-xl max-w-md shadow-lg min-h-96 min-w-96">
         <h1 className='font-black text-white my-0.5'>GET THE THINGS DONE</h1>
         <InputField addTask={addTask} />
         {todos.map((todo, index) => (

@@ -17,11 +17,11 @@ export function Item({ content, id, removeTask }: ItemProps) {
     <div className="text-white" key={id}>
 
       {!isEditing && (
-        <div className='flex justify-between bg-black border rounded-none my-1 max-w-screen-md'>
+        <div className='flex justify-between bg-black border border-gray-400 hover:border-blue-300 rounded-sm my-1 max-w-screen-md'>
           <span className='mx-2 self-center'>{content}</span>
-          <div className='p-2 justify-items-center space-x-1'>
-            <FontAwesomeIcon icon={faTrash} onClick={() => removeTask(id)} />
-            <FontAwesomeIcon icon={faPenToSquare} onClick={() => setIsEditing(true)} />
+          <div className='p-2 justify-items-center space-x-2'>
+            <FontAwesomeIcon icon={faTrash} onClick={() => removeTask(id)} className="hover:size-5"/>
+            <FontAwesomeIcon icon={faPenToSquare} onClick={() => setIsEditing(true)} className="hover:size-5"/>
           </div>
         </div>
       )}

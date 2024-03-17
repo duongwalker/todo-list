@@ -40,11 +40,15 @@ export function InputField({ taskId, defaultValue, addTask, setIsEditing }: Inpu
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* include validation with required or other standard HTML validation rules */}
-      <input defaultValue={defaultValue} className=" text-black" {...register("exampleRequired", { required: true })} />
-      {/* errors will return when field validation fails  */}
-      {errors.exampleRequired && <span>This field is required</span>}
+      <div className="flex space-x-1 ">
+      <div className="flex flex-col">
+        <input defaultValue={defaultValue} className="border m-[1px] rounded-sm min-w-72 max-h-6 outline-none hover:border-blue-300 focus:border-blue-800 focus:shadow-border-like text-black" {...register("exampleRequired", { required: true })} />
+        {/* errors will return when field validation fails  */}
+        {errors.exampleRequired && <p className="text-left ">The task is required</p>}
+      </div>
 
-      <button className="text-white bg-[#3A3A3E] border rounded-sm border-hidden px-3" type="submit">Add task</button>
+      <button className="text-white bg-[#3A3A3E] border border-gray-400 rounded-sm px-3 max-h-6 hover:border-blue-300" type="submit">Add task</button>
+      </div>
     </form>
   )
 }
